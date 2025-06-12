@@ -1,6 +1,11 @@
 # User API
 
-A simple REST API for managing users, built with Go and MySQL.
+A simple CRUD REST API microservice for managing users, built with Go and MySQL.
+
+This whole thing was made in a few hours in 1 day using the Cursor IDE, using Claude 3.5 as the IA model.
+It's a fully functional docker app. Includes tests, documentation on how to start it and how to use the endpoints.
+I have no idea about Go, I neved coded in Go before and this doesn't count.
+This works as an example about how the software development profession is changing.
 
 ## Features
 
@@ -9,7 +14,7 @@ A simple REST API for managing users, built with Go and MySQL.
 - Static API documentation with Swagger UI
 - Docker support
 - MySQL database
-- Test-driven development
+- Built using Test-driven development (I insisted a lot in my prompts)
 - Makefile for easy development
 
 ## Prerequisites
@@ -126,53 +131,3 @@ API documentation is available at `http://localhost:8080/docs/`
 - `DELETE /users/{id}` - Delete a user
 - `GET /users` - List all users
 
-### Example Request
-
-Create a new user:
-```bash
-curl -X POST http://localhost:8080/users \
-  -H "Content-Type: application/json" \
-  -d '{
-    "name": "John Doe",
-    "age": 30,
-    "phone_number": "+1234567890",
-    "email": "john@example.com"
-  }'
-```
-
-## Project Structure
-
-```
-.
-├── Dockerfile
-├── docker-compose.yml
-├── go.mod
-├── go.sum
-├── Makefile
-├── handlers/
-│   ├── user_handler.go
-│   └── user_handler_test.go
-├── main.go
-├── models/
-│   ├── user.go
-│   └── user_test.go
-├── repository/
-│   ├── mysql_user_repository.go
-│   └── user_repository.go
-├── docs/
-│   ├── swagger.json
-│   └── index.html
-└── schema.sql
-```
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details. 
